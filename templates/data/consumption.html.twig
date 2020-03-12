@@ -1,0 +1,33 @@
+{% extends('base.html.twig') %}
+
+{% block body %}
+    <h2>Consumptions</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>Gateway</td>
+            <td>Profile</td>
+            <td>Endpoint</td>
+            <td>Cluster</td>
+            <td>Attribute</td>
+            <td>Value</td>
+            <td>Timestamp</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for consumption in consumptionArray %}
+            <tr>
+                <td>{{ consumption.id }}</td>
+                <td>{{ consumption.gateway.eui }}</td>
+                <td>{{ consumption.profile.id }}</td>
+                <td>{{ consumption.endpoint.id }}</td>
+                <td>{{ consumption.cluster.id }}</td>
+                <td>{{ consumption.attribute.id }}</td>
+                <td>{{ consumption.value }}</td>
+                <td>{{ consumption.timestamp }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends('base.html.twig') %}
+
+{% block body %}
+    <h2>{{ title }}</h2>
+    {% if messages is not null and messages is not empty %}
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td>Key</td>
+                <td>Body</td>
+            </tr>
+            </thead>
+            <tbody>
+                {% for message in messages %}
+                    <tr>
+                        <td>{{ message.key }}</td>
+                        <td>{{ message.body }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends('base.html.twig') %}
+
+{% block body %}
+    <h2>Gateways</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>EUI</td>
+        </tr>
+        </thead>
+        <tbody>
+            {% for gateway in gatewayArray %}
+                <tr>
+                    <td>{{ gateway.id }}</td>
+                    <td>{{ gateway.eui }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
